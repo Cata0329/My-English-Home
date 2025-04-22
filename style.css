@@ -1,0 +1,405 @@
+/* Estilo de la pagina */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #2e267a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #2e267a;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.home-image img {
+  width: 300px;
+  border-radius: 30px;
+  margin-right: 40px;
+}
+
+.text-section {
+  text-align: center;
+}
+
+.text-section h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.text-section h1 span {
+  display: block;
+  font-size: 24px;
+  font-style: italic;
+}
+
+#startBtn {
+  padding: 15px 30px;
+  background-color: #fdd835;
+  color: #2e267a;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
+/* Estilo de la sección del vocabulario */
+.vocabulary-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f5f5f5;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #2e267a;
+}
+
+.espanol {
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #5e4fc4;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.ingles {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2e267a;
+}
+
+.card button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2e267a;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Estilo del menú */
+.menu {
+  background-color: #2e267a;
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+
+.menu h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.menu button {
+  display: block;
+  margin: 10px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: #fdd835;
+  color: #2e267a;
+  font-weight: bold;
+  cursor: pointer;
+  width: 250px;
+  transition: background 0.3s;
+}
+
+.menu button:hover {
+  background-color: #ffe965;
+}
+
+.back-button {
+  margin-top: 20px;
+}
+
+.back-button button {
+  background-color: #ffd53d;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+}
+
+.back-button button:hover {
+  background-color: #ffc107;
+}
+
+/* Estilo de la sección del juego interactivo */
+#game-section {
+  text-align: center;
+  background-color: #2e267a;
+  padding: 40px 20px;
+  color: white;
+}
+
+.game-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.game-container-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.images-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.image-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-card .dropzone {
+  margin-top: 10px;
+  border: 2px dashed #ccc;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #2e267a;
+}
+
+.words-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.words-area .draggable-word {
+  background-color: #fdd835;
+  color: #2e267a;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: grab;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+/* MEDIA QUERIES PARA RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .images-area,
+  .words-area,
+  .images-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-image img {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .images-area,
+  .words-area,
+  .images-column {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .vocabulary-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu button,
+  #startBtn {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .draggable-word {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .image-card {
+    width: 100%;
+  }
+
+  .dropzone {
+    width: 100%;
+  }
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Caja para soltar palabras */
+.dropzone {
+  width: 180px;
+  height: 50px;
+  margin-top: 8px;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #2e267a;
+  font-size: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dropzone.over {
+  background-color: #fff9c4;
+  border-color: #fdd835;
+}
+
+/* Ajuste visual para las palabras */
+.draggable-word {
+  background-color: #fdd835;
+  color: #2e267a;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  
+  cursor: grab;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Diseño para la sección del quiz */
+
+#quiz-section {
+  text-align: center;
+  background-color: #2e267a;
+  padding: 40px 20px;
+  color: white;
+}
+
+.quiz-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#question-image img {
+  width: 250px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+#question-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#answer-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.answer-btn {
+  background-color: #fdd835;
+  color: #2e267a;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 60%;
+  transition: background 0.3s;
+}
+
+.answer-btn:hover {
+  background-color: #ffe965;
+}
+
+#next-question-btn {
+  margin-top: 20px;
+  background-color: #5e4fc4;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#quiz-result {
+  font-size: 22px;
+  margin-top: 30px;
+}
