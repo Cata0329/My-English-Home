@@ -4,5 +4,7 @@ El presente proyecto consiste en el desarrollo de una aplicación web educativa 
 Instalación
 
 Descarga los archivos: index.html, style.css, app.js.
+
 Guárdalos en una misma carpeta.
+
 Abre el archivo index.html con doble clic o desde el navegador
