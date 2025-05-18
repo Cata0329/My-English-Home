@@ -1,0 +1,580 @@
+/* PAGINA PRINCIPAL */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #2e267a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #2e267a;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.home-image img {
+  width: 300px;
+  border-radius: 30px;
+  margin-right: 40px;
+}
+
+.text-section {
+  text-align: center;
+}
+
+.text-section h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.text-section h1 span {
+  display: block;
+  font-size: 24px;
+  font-style: italic;
+}
+
+#startBtn {
+  padding: 15px 30px;
+  background-color: #fdd835;
+  color: #2e267a;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
+/* SECCION DE VOCABULARIO */
+.vocabulary-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f5f5f5;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #2e267a;
+}
+
+.espanol {
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #5e4fc4;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.ingles {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2e267a;
+}
+
+.card button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2e267a;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* SECCION DEL MENU*/
+.menu {
+  background-color: #2e267a;
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+
+.menu h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.menu button {
+  display: block;
+  margin: 10px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: #fdd835;
+  color: #2e267a;
+  font-weight: bold;
+  cursor: pointer;
+  width: 250px;
+  transition: background 0.3s;
+}
+
+.menu button:hover {
+  background-color: #ffe965;
+}
+
+.back-button {
+  margin-top: 20px;
+}
+
+.back-button button {
+  background-color: #ffd53d;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+}
+
+.back-button button:hover {
+  background-color: #ffc107;
+}
+
+/* SECCION DEL JUEGO INTERACTIVO */
+#game-section {
+  text-align: center;
+  background-color: #2e267a;
+  padding: 40px 20px;
+  color: white;
+}
+
+.game-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.game-container-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.images-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.image-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-card .dropzone {
+  margin-top: 10px;
+  border: 2px dashed #ccc;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #2e267a;
+}
+
+.words-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.words-area .draggable-word {
+  background-color: #fdd835;
+  color: #2e267a;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: grab;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+@media (max-width: 1024px) {
+  .images-area,
+  .words-area,
+  .images-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-image img {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .images-area,
+  .words-area,
+  .images-column {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .vocabulary-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu button,
+  #startBtn {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .draggable-word {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .image-card {
+    width: 100%;
+  }
+
+  .dropzone {
+    width: 100%;
+  }
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+/* CAJA PARA SOLTAR PALABRAS */
+.dropzone {
+  width: 180px;
+  height: 50px;
+  margin-top: 8px;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #2e267a;
+  font-size: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dropzone.over {
+  background-color: #fff9c4;
+  border-color: #fdd835;
+}
+
+/* Ajuste visual para las palabras */
+.draggable-word {
+  background-color: #fdd835;
+  color: #2e267a;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  
+  cursor: grab;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SECCION DEL QUIZ */
+
+#quiz-section {
+  text-align: center;
+  background-color: #2e267a;
+  padding: 40px 20px;
+  color: white;
+}
+
+.quiz-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#question-image img {
+  width: 250px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+#question-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#answer-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.answer-btn {
+  background-color: #fdd835;
+  color: #2e267a;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 60%;
+  transition: background 0.3s;
+}
+
+.answer-btn:hover {
+  background-color: #ffe965;
+}
+
+#next-question-btn {
+  margin-top: 20px;
+  background-color: #5e4fc4;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#quiz-result {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+.room-view {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.room-view img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.object-name-display {
+    background: #FFD700;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/*SECCION DEL EXPLORE ROOM */
+
+/* Contenedor principal */
+.room-interactive {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Imagen de la habitación */
+.room-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* Tooltip flotante */
+.tooltip {
+    position: absolute;
+    background: rgba(255, 215, 0, 0.9);
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Panel inferior */
+.object-display {
+    background: #f1bced;
+    padding: 1px;
+    margin-top: 10px;
+    max-width: 400px;
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    border: 1px solid #fdfdfd;
+}
+
+/* Efecto hover para áreas (opcional) */
+area {
+    cursor: pointer;
+}
+
+/* Estilos para el panel mejorado */
+.word-card {
+    background: white;
+    border-radius: 10px;
+    max-width: 300px; 
+    margin: 20px auto;  
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.english-word {
+    font-size: 1.5em;
+    color: #4a6fa5;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.translation {
+    font-size: 1.1em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.pronunciation {
+    font-size: 1em;
+    color: #ff6b6b;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ESTILO CASA COMPLETA*/
+
+/* Vista de la casa */
+#house-overview {
+    text-align: center;
+}
+.house-image {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* Botón de navegación */
+.nav-button {
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+.nav-button:hover {
+    background: #3a5a80;
+}
+
+/* Ocultar vistas inicialmente */
+#room-detail.hidden, 
+#house-overview.hidden {
+    display: none;
+}
+
+/* Oculta elementos */
+.hidden {
+    display: none;
+}
+
+/* Estilo para la imagen de la casa */
+.house-image {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* Botón de volver */
+.nav-button {
+    background: #FFD700;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px auto;
+    display: block;
+}
+
+/*Botones check y resart */
+
+.yellow-button {
+  background-color: #ffd53d;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+  margin-top: 10px;
+}
+
+.yellow-button:hover {
+  background-color: #ffc107;
+}

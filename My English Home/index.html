@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My English Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="home-image">
+      <img src="casa.png" alt="Casa" />
+    </div>
+    <div class="text-section">
+      <h1>MY ENGLISH <span>Home</span></h1>
+      <button id="startBtn">🚀 Let's Learn!</button>
+      <p class="subtitle"> 📚 Vocabulary - 🎮 Games - 🧠 Quizzes</p>
+    </div>
+  </div>
+
+   <!-- Menu -->
+  <div id="menu-screen" class="menu hidden">
+    <h2>Select an Activity</h2>
+    <button onclick="showSection('vocabulary')"> 📚 Vocabulary </button>
+    <button onclick="showSection('game')"> 🎮 Games</button>
+    <button onclick="showSection('explore-room')"> 🔍 Explore the Room</button>
+    <button onclick="showQuizSection()"> 🧠 Quiz</button>
+    
+
+    <div class="back-button">
+      <button onclick="goBackToHome()">⬅ Back to Home</button>
+    </div>
+  </div>
+
+<!-- Sección del Vocabulary -->
+<div id="vocabulary-section" class="vocabulary-container hidden">
+  <div class="card">
+    <p class="espanol">Sala de estar</p>
+    <img src="livingroom.png" alt="Living Room">
+    <p class="ingles">Living Room</p>
+    <button onclick="playSound('living')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Comedor</p>
+    <img src="diningroom.png" alt="Dining Room">
+    <p class="ingles">Dining Room</p>
+    <button onclick="playSound('dining')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Dormitorio</p>
+    <img src="bedroom.png" alt="Bedroom">
+    <p class="ingles">Bedroom</p>
+    <button onclick="playSound('bedroom')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Baño</p>
+    <img src="bathroom.png" alt="Bathroom">
+    <p class="ingles">Bathroom</p>
+    <button onclick="playSound('bathroom')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Cocina</p>
+    <img src="kitchen.png" alt="Kitchen">
+    <p class="ingles">Kitchen</p>
+    <button onclick="playSound('kitchen')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Estudio</p>
+    <img src="study.png" alt="Study">
+    <p class="ingles">Study</p>
+    <button onclick="playSound('study')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Cuarto de lavado</p>
+    <img src="laundryroom.png" alt="Laundry Room">
+    <p class="ingles">Laundry Room</p>
+    <button onclick="playSound('laundry')">🔊</button>
+  </div>
+
+  <div class="card">
+    <p class="espanol">Ático</p>
+    <img src="attic.png" alt="Attic">
+    <p class="ingles">Attic</p>
+    <button onclick="playSound('attic')">🔊</button>
+  </div>
+
+  <!-- Botón de volver -->
+  <div class="back-button">
+    <button onclick="goBackToMenu()">⬅ Back to Menu</button>
+  </div>
+</div>
+
+  <!-- Archivos de audio -->
+  <audio id="living" src="audio/livingroom.mp4"></audio>
+  <audio id="dining" src="audio/dinningroom.mp4"></audio>
+  <audio id="bedroom" src="audio/bedroom.mp4"></audio>
+  <audio id="bathroom" src="audio/bathroom.mp4"></audio>
+  <audio id="kitchen" src="audio/kitchen.mp4"></audio>
+  <audio id="study" src="audio/study.mp4"></audio>
+  <audio id="laundry" src="audio/laundryroom.mp4"></audio>
+  <audio id="attic" src="audio/attic.mp4"></audio>
+
+
+<!-- Sección de juegos interactivos -->
+<div id="game-section" class="hidden">
+  <h2 class="game-title">Match the word with the correct picture</h2>
+  <div class="game-container-grid">
+    
+    <!-- Columna de imágenes -->
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="bathroom.png" alt="Bathroom">
+      </div>
+      <div class="dropzone" data-word="Bathroom"></div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="livingroom.png" alt="Living Room">
+      </div>
+      <div class="dropzone" data-word="Living Room"></div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="kitchen.png" alt="Kitchen">
+      </div>
+      <div class="dropzone" data-word="Kitchen"></div>
+    </div>
+    
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="diningroom.png" alt="Dining Room">
+      </div>
+      <div class="dropzone" data-word="Dining Room"></div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="bedroom.png" alt="Bedroom">
+      </div>
+      <div class="dropzone" data-word="Bedroom"></div>
+    </div>
+    
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="study.png" alt="Study">
+      </div>
+      <div class="dropzone" data-word="Study"></div>
+    </div>
+    
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="laundryroom.png" alt="Laundry Room">
+      </div>
+      <div class="dropzone" data-word="Laundry Room"></div>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="image-card">
+        <img src="attic.png" alt="Attic">
+      </div>
+      <div class="dropzone" data-word="Attic"></div>
+    </div>
+    
+
+    <!-- Columna de palabras -->
+    <div class="words-area">
+      <div class="draggable-word" draggable="true" data-word="Bathroom">Bathroom</div>
+      <div class="draggable-word" draggable="true" data-word="Living Room">Living Room</div>
+      <div class="draggable-word" draggable="true" data-word="Kitchen">Kitchen</div>
+      <div class="draggable-word" draggable="true" data-word="Dining Room">Dining Room</div>
+      <div class="draggable-word" draggable="true" data-word="Bedroom">Bedroom</div>
+      <div class="draggable-word" draggable="true" data-word="Study">Study</div>
+      <div class="draggable-word" draggable="true" data-word="Laundry Room">Laundry Room</div>
+      <div class="draggable-word" draggable="true" data-word="Attic">Attic</div>
+    </div>
+  </div>
+
+    <button class="yellow-button" onclick="checkAnswers()">Check Answers</button>
+    <div id="game-result"></div>
+    <button class="yellow-button" onclick="resetGame()">Restart Game</button>
+    <p id="game-result"></p>  
+    <div class="back-button">
+      <button onclick="goBackToMenu()">⬅ Back to Menu</button>
+    </div>
+
+</div>
+<!-- Sección 4: Habitación Interactiva -->
+<section id="explore-room" class="hidden">
+    <!-- Vista 1: Casa completa -->
+    <div id="house-overview">
+        <h2>¡Explore the room!</h2>  
+        <img src="exploracion/casacompleta.png" alt="Casa" usemap="#house-map" class="house-image">
+        <map name="house-map">
+            <area shape="circle" coords="163,237,87" data-room="bedroom" data-name="Bedroom" alt="Bedroom">
+            <area shape="circle" coords="392,243,91" data-room="bathroom" data-name="Bathroom" alt="Bathroom">
+            <area shape="circle" coords="131,436,86" data-room="livingroom" data-name="Living Room" alt="Living Room">
+            <area shape="circle" coords="365,435,90" data-room="kitchen" data-name="Kitchen" alt="Kitchen">
+        </map>
+       
+       <div class="back-button">
+    <button onclick="goBackToMenu()">⬅ Back to Menu</button>
+  </div> 
+    </div>
+
+    <!-- Vista 2: Habitación interactiva (dinámica) -->
+    <div id="room-detail" class="hidden">
+        <div class="room-interactive">
+            <!-- Imagen dinámica (se carga según la habitación) -->
+            <img id="current-room-image" src="" alt="Habitación" usemap="#room-map">
+            <!-- Mapa dinámico (se llena con JS) -->
+            <map name="room-map"></map>
+            <div id="tooltip" class="tooltip"></div>
+        </div>
+        
+        <!-- Panel de información -->
+        <div class="object-display">
+            <div class="word-card">
+                <p class="english-word" id="display-word">---</p>
+                <p class="translation" id="display-translation">---</p>
+                <p class="pronunciation" id="display-pronunciation">/---/</p>
+            </div>
+        </div>
+        
+        <!-- Botón para volver -->
+        <button id="back-to-house" class="nav-button">⬅ Back to the home</button>
+    </div>
+</section>
+   <!-- Sección del quiz -->
+
+   <section id="quiz-section" class="hidden">
+    <h2 class="quiz-title">Quiz Time! 🧠</h2>
+    <div id="quiz-container">
+      <div id="question-image"></div>
+      <p id="question-text"></p>
+      <div id="answer-options"></div>
+      <button id="next-question-btn" class="hidden">Next</button>
+      <div id="quiz-result" class="hidden"></div>
+    </div>
+    <div class="back-button">
+      <button onclick="goBackToMenu()">⬅ Back to Menu</button>
+    </div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
